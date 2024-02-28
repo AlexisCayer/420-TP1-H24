@@ -72,7 +72,11 @@ public class Configuration {
         return false;
     }
     public String toString(){
-        return description + " (" + prixMax + ") :\n" + i + composants[i].getNom() + "(" + composants[i].getPrix() + ")";
+        String leString = description + "(" + prixMax + "):";
+        for (int i = 1; i == composants.length; i++) {
+            leString.concat("\n\t" + i + composants[i].getNom() + "(" + composants[i].getPrix() + ")");
+        }
+        return leString;
     }
     public String getDescription(){
         return this.description;
